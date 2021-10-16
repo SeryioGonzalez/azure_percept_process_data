@@ -9,11 +9,26 @@ In this lab, we are going to add an IoT Edge module that process this data in th
 ![Lab diagram](images/lab_3.jpg "Header Image")
 
 We are going to use Azure CLI and code a simple module in Python. Certainly other choices are possible, but this are my preferences :)
+You also need a docker runtime in your PC. I recommend WSL if you are a Windows user
 
 ## Add the configuration of your environment
 In your favorite editor of choice, edit the following variables shown empty in config.sh:
 
 ![Lab diagram](images/lab_4.jpg "Header Image")
 
-- registry_name = The name of your ACR instance
+Just to clarify:
+- registry_name = The name of your ACR (Azure Container Registry) instance
 - device_name = The name of the AzPercept DK in your IoT Hub
+
+## Build the container and push it to ACR for the first time
+The script is considering the initial states, when certain items required are missing. The first thing we need is having this module in an ACR instance, so IoT Hub can connect to.
+We run the script:
+```
+./deploy.sh
+```
+![Lab diagram](images/lab_5.jpg "Header Image")
+
+The script produces a final failure, but this is expected. Now the image is uploaded to our ACR instance:
+![Lab diagram](images/lab_6.jpg "Header Image")
+
+
