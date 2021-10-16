@@ -70,8 +70,26 @@ Click on **Create** in order to send the deployment to the DK.
 ### Verify it is working
 
 The easiest method to see everything working is looking at the telemetry sent to IoT Hub. With the changes provided, the telemetry should now come from our custom module. Use the command **az iot hub monitor-events** pointing to your IoT Hub and Azure Percept DK device name, as shown below.
-![Lab diagram](images/lab_10.jpg "Header Image")
+![Lab diagram](images/lab_11.jpg "Header Image")
 
 As you can see highlighted in yellow, now the telemetry comes from a module called **dataparser** and the payload is a simpler JSON format.
 
+## Continuous deployment
+With the deployment manifest properly stored, now we can easily make changes to the script and push it to the device with a single script. This is very useful for fine tunning the data manipulation process. 
 
+In this example, we are going to change the message output to something basic hardcoded, that I hope it will indicate how easy it is to modify the script behaviour.
+![Lab diagram](images/lab_14.jpg "Header Image")
+In the previous image, shown in yellow, I commented out the desired line and put a copy with a fixed message.
+Then, as shown in orange, I launch the script, pushing a new version of the container image to ACR and deploying the manifest with the updated version to the AzPercept DK.
+![Lab diagram](images/lab_12.jpg "Header Image")
+A few seconds later, in the AzPercept DK we can see the updated version of the container image.
+Then, we see in IoT Hub the modified messages arriving.
+![Lab diagram](images/lab_13.jpg "Header Image")
+
+## Conclusion
+Although this lab does not pretent to be a formal CI/CD environment, it provides a basic foundation for automated deployments in AzPercept DKs or any other IoT Edge powered device. For this, the only items of this repo to modify are:
+
+| File  | Required change |
+| ------------- | ------------- |
+| config.sh  | Update your ACR, IoT Hub and IoT Edge device data  |
+| percept.reference.deployment.json  | Create an initial manual deployment of the container image and set the IoT edge routes on IoT hub and copy the resulting manifest  |
