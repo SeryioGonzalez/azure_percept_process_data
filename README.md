@@ -28,7 +28,7 @@ We run the script:
 ```
 ![Lab diagram](images/lab_5.jpg "Header Image")
 
-The script produces a final failure, but this is expected. Now the image is uploaded to our ACR instance:
+The script produces an error after the container has been pushed, but this is expected in the first iteration. Now the image is uploaded to our ACR instance:
 ![Lab diagram](images/lab_6.jpg "Header Image")
 
 ## Deploy the container to Azure Percept for the first time
@@ -57,3 +57,10 @@ We defined the following routes.
 | ParserToIoTHub  | FROM /messages/modules/dataparser/outputs/* INTO $upstream  |
 | AzureSpeechToIoTHub  | FROM /messages/modules/azureearspeechclientmodule/outputs/* INTO $upstream  |
 
+### Grab the deployment manifest
+Once the routes have been defined, there is a deployment manifest ready to use. 
+
+Create a file named **percept.reference.deployment.json** and copy the content of this JSON in the image to this file:
+'''
+
+'''
