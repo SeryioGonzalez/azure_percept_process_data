@@ -59,8 +59,8 @@ We defined the following routes.
 
 ### Grab the deployment manifest
 Once the routes have been defined, there is a deployment manifest ready to use. 
-
+![Lab diagram](images/lab_10.jpg "Header Image")
 Create a file named **percept.reference.deployment.json** and copy the content of this JSON in the image to this file:
 '''
-
+touch percept.reference.deployment.json
 '''
