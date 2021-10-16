@@ -45,4 +45,14 @@ Select the option **Add > IoT Edge Module** highlighed in green in the previous 
 In order to let the automation script work, please use the name **dataparser**. The image URL was shown when the container was pushed to ACR for the first time, highlighted in red
 
 ### Update IoT Edge routes
-Now we need to update module routes, so the inference output goes to our module. For this, go to **Routes** option in the blade where you input ACR credentials
+Now we need to update module routes, so the inference output goes to our module. For this, go to **Routes** option in the blade where you input ACR credentials.
+![Lab diagram](images/lab_9.jpg "Header Image")
+
+We defined the following routes.
+
+| Name  | Value |
+| ------------- | ------------- |
+| AzureEyeModuleToParser  | FROM /messages/modules/azureeyemodule/outputs/* INTO BrokeredEndpoint("/modules/dataparser/inputs/input2")  |
+| ParserToIoTHub  | FROM /messages/modules/dataparser/outputs/* INTO $upstream  |
+| AzureSpeechToIoTHub  | FROM /messages/modules/azureearspeechclientmodule/outputs/* INTO $upstream  |
+
