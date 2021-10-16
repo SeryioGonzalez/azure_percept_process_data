@@ -31,4 +31,10 @@ We run the script:
 The script produces a final failure, but this is expected. Now the image is uploaded to our ACR instance:
 ![Lab diagram](images/lab_6.jpg "Header Image")
 
+## Deploy the container to Azure Percept for the first time
+Once the module is running and the routes are properly defined, the module can be updated automatically with the provided script.
+![Lab diagram](images/lab_7.jpg "Header Image")
+
+### Add ACR credentials to IoT Edge Configuration
+As shown in the previous image, highlighted in red, you need to provide ACR credentials. For this, go to your ACR instance, under **Settings > Access Keys**, Enable **Admin user** and copy the fields **Login server, username and password** to the fields highlighted in red.
 
