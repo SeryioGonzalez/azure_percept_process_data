@@ -82,6 +82,7 @@ In this example, we are going to change the message output to something basic ha
 In the previous image, shown in yellow, I commented out the desired line and put a copy with a fixed message.
 Then, as shown in orange, I launch the script, pushing a new version of the container image to ACR and deploying the manifest with the updated version to the AzPercept DK.
 ![Lab diagram](images/lab_12.jpg "Header Image")
+
 A few seconds later, in the AzPercept DK we can see the updated version of the container image.
 Then, we see in IoT Hub the modified messages arriving.
 ![Lab diagram](images/lab_13.jpg "Header Image")
@@ -93,3 +94,4 @@ Although this lab does not pretent to be a formal CI/CD environment, it provides
 | ------------- | ------------- |
 | config.sh  | Update your ACR, IoT Hub and IoT Edge device data  |
 | percept.reference.deployment.json  | Create an initial manual deployment of the container image and set the IoT edge routes on IoT hub and copy the resulting manifest  |
+| module/dataparser/main.py  | Modify the data processing application as you like/need  |
