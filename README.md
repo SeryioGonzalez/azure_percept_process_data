@@ -9,3 +9,9 @@ In this lab, we are going to add an IoT Edge module that process this data in th
 ![Lab diagram](images/lab_3.jpg "Header Image")
 
 We are going to use Azure CLI and code a simple module in Python. Certainly other choices are possible, but this are my preferences :)
+
+## Add the configuration of your environment
+In your favorite editor of choice, edit the following variables
+![Lab diagram](images/lab_4.jpg "Header Image")
+- registry_name = The name of your ACR instance
+- device_name = The name of the AzPercept DK in your IoT Hub
