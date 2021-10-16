@@ -62,7 +62,16 @@ Once the routes have been defined, there is a deployment manifest ready to use.
 ![Lab diagram](images/lab_10.jpg "Header Image")
 
 Create a file named **percept.reference.deployment.json** and copy the content of this JSON in the previous image to this file:
-'''
+```
 touch percept.reference.deployment.json
-'''
+```
 Click on **Create** in order to send the deployment to the DK. 
+
+### Verify it is working
+
+The easiest method to see everything working is looking at the telemetry sent to IoT Hub. With the changes provided, the telemetry should now come from our custom module. Use the command **az iot hub monitor-events** pointing to your IoT Hub and Azure Percept DK device name, as shown below.
+![Lab diagram](images/lab_10.jpg "Header Image")
+
+As you can see highlighted in yellow, now the telemetry comes from a module called **dataparser** and the payload is a simpler JSON format.
+
+
