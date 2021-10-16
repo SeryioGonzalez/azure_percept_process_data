@@ -35,6 +35,10 @@ The script produces a final failure, but this is expected. Now the image is uplo
 Once the module is running and the routes are properly defined, the module can be updated automatically with the provided script.
 ![Lab diagram](images/lab_7.jpg "Header Image")
 
-### Add ACR credentials to IoT Edge Configuration
-As shown in the previous image, highlighted in red, you need to provide ACR credentials. For this, go to your ACR instance, under **Settings > Access Keys**, Enable **Admin user** and copy the fields **Login server, username and password** to the fields highlighted in red.
+#### Add ACR credentials to IoT Edge Configuration
+As shown in the previous image, highlighted in red, you need to provide ACR credentials. For this, go to your ACR instance, under **Settings > Access Keys**, Enable **Admin user** and copy the fields **Login server, username and password** to the fields highlighted in red. If you do not do this, you might configure the module, it will deploy, but your edge device will fail to download and the module will be shown as a crashed container on your AzPercept DK IoT Edge runtime.
+
+#### Deploy the module you pushed to ACR on your AzPercept DK
+Select the option **Add > IoT Edge Module** highlighed in green in the previous image. The following blade will open and the module name and image URL in ACR must be input.
+In order to let the automation script work, please use the name **dataparser**. The image URL was shown when the container was pushed to ACR for the first time, highlighted in red
 
