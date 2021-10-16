@@ -46,6 +46,7 @@ In order to let the automation script work, please use the name **dataparser**. 
 
 ### Update IoT Edge routes
 Now we need to update module routes, so the inference output goes to our module. For this, go to **Routes** option in the blade where you input ACR credentials.
+
 ![Lab diagram](images/lab_9.jpg "Header Image")
 
 We defined the following routes.
