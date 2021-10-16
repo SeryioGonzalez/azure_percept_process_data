@@ -40,5 +40,7 @@ As shown in the previous image, highlighted in red, you need to provide ACR cred
 
 #### Deploy the module you pushed to ACR on your AzPercept DK
 Select the option **Add > IoT Edge Module** highlighed in green in the previous image. The following blade will open and the module name and image URL in ACR must be input.
+![Lab diagram](images/lab_8.jpg "Header Image")
+
 In order to let the automation script work, please use the name **dataparser**. The image URL was shown when the container was pushed to ACR for the first time, highlighted in red
 
